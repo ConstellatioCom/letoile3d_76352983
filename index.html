@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Démonstration de Potentiel Visuel - Sélection</title>
+  <title>Visuels L'Étoile 3D pour Instagram</title>
 <style>
     body {
       font-family: sans-serif;
@@ -19,7 +19,6 @@
     /* La grille responsive */
     .gallerie {
       display: grid;
-      /* Colonnes de 250px minimum */
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 15px;
       padding: 10px;
@@ -35,21 +34,19 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       overflow: hidden; 
-      height: 0;
-      padding-top: 100%; /* Ratio 1:1 pour simuler Instagram */
+      padding-top: 100%; /* Ratio 1:1 */
     }
     
     .image-container img {
-        /* Positionne l'image pour couvrir le conteneur */
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Assure que l'image couvre sans déformer */
+        object-fit: cover;
     }
-    
-    /* Style pour la numérotation (qui repart de 1) */
+
+    /* Style pour la numérotation */
     .image-container::before {
       counter-increment: image-counter;
       content: counter(image-counter);
@@ -64,12 +61,34 @@
       font-weight: bold;
       font-size: 14px;
     }
+    
+    /* Aperçu Flottant (Effet de votre modèle) */
+    .image-container:hover {
+      overflow: visible;
+      z-index: 10000;
+      cursor: pointer;
+    }
+    
+    .image-container:hover img {
+      object-fit: contain;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); 
+      width: 400px; /* Taille de l'aperçu */
+      height: auto;
+      z-index: 10002;
+      transition: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      pointer-events: none;
+    }
 </style>
 </head>
 <body>
 
-  <h1>Images Sélectionnées pour la Prospection (15 Éléments)</h1>
-  <p style="text-align: center; margin-bottom: 20px;">Voici la sélection filtrée de vos meilleurs contenus, chargés directement depuis votre serveur.</p>
+  <h1>Visuels L'Étoile 3D pour Instagram</h1>
+  <p style="text-align: center; margin-bottom: 20px;">Sélection de 15 contenus visuels</p>
 
   <div class="gallerie">
     
