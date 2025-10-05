@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Démonstration de Potentiel Visuel - Sélection</title>
+<style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      background-color: #f0f2f5;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* La grille responsive */
+    .gallerie {
+      display: grid;
+      /* Colonnes de 250px minimum */
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 10px;
+      
+      /* Numérotation : Initialisation du compteur */
+      counter-reset: image-counter;
+    }
+    
+    /* Conteneur individuel pour garantir un ratio 1:1 (carré) */
+    .image-container {
+      position: relative;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden; 
+      height: 0;
+      padding-top: 100%; /* Ratio 1:1 pour simuler Instagram */
+    }
+    
+    .image-container img {
+        /* Positionne l'image pour couvrir le conteneur */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Assure que l'image couvre sans déformer */
+    }
+    
+    /* Style pour la numérotation (qui repart de 1) */
+    .image-container::before {
+      counter-increment: image-counter;
+      content: counter(image-counter);
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      z-index: 10;
+      font-weight: bold;
+      font-size: 14px;
+    }
+</style>
+</head>
+<body>
+
+  <h1>Images Sélectionnées pour la Prospection (15 Éléments)</h1>
+  <p style="text-align: center; margin-bottom: 20px;">Voici la sélection filtrée de vos meilleurs contenus, chargés directement depuis votre serveur.</p>
+
+  <div class="gallerie">
+    
+    <div class="image-container"><img src="https://www.letoile3d.fr/dist/images/button.311656a8.png" alt="Sélection 1"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2018/03/glitch_highres_2.png" alt="Sélection 2"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2021/07/180320-etoile-visuel3-1-scaled.jpg" alt="Sélection 3"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2018/05/home_intro.jpg" alt="Sélection 4"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2018/03/180320-etoile-lexique-visuel3.jpg" alt="Sélection 5"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2018/03/180320-etoile-lexique-visuel2.jpg" alt="Sélection 6"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2018/03/180320-etoile-lexique-visuel1.jpg" alt="Sélection 7"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2018/03/180320-etoile-visuel4.jpg" alt="Sélection 8"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2018/03/180320-etoile-visuel5.jpg" alt="Sélection 9"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2018/03/180320-etoile-visuel6.jpg" alt="Sélection 10"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2018/03/180320-etoile-visuel7.jpg" alt="Sélection 11"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2019/01/cs3d.jpg" alt="Sélection 12"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2018/12/belinda-fewings-977695-unsplash.jpg" alt="Sélection 13"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2018/12/IMG_0514-1.jpg" alt="Sélection 14"></div>
+    <div class="image-container"><img src="https://www.letoile3d.fr/wp-content/uploads/2019/06/Ephestia.kuehniella.jpg" alt="Sélection 15"></div>
+    
+  </div>
+
+</body>
+</html>
